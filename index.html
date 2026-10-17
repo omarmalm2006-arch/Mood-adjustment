@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="scroll-smooth scroll-pt-16 lg:scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew & Blend</title>
+  </head>
+
+  <body class="m-0 min-h-screen bg-[#f5e6d3]">
+    <header
+      class="fixed inset-x-0 top-0 z-50 bg-[#1c110d] text-[#f5e6d3] shadow-md"
+    >
+      <div
+        class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-6 lg:h-20 lg:gap-6 lg:px-8"
+      >
+        <a
+          href="index.html"
+          class="flex min-w-0 shrink-0 items-center gap-2 text-inherit no-underline sm:gap-3"
+        >
+          <img
+            src="src/assets/icon/coffee.svg"
+            alt="Brew & Blend Logo"
+            class="size-9 sm:size-12 lg:size-14"
+          />
+
+          <div class="min-w-0">
+            <h1 class="whitespace-nowrap text-sm font-bold sm:text-lg lg:text-xl">
+              Brew &amp; Blend
+            </h1>
+
+            <span
+              class="hidden whitespace-nowrap text-xs text-[#dbd06e] sm:block"
+            >
+              Good Drinks. Better Days.
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop navigation -->
+        <nav class="hidden lg:block lg:flex-1" aria-label="Main">
+          <ul
+            class="m-0 flex list-none items-center justify-center gap-x-6 p-0 xl:gap-x-10"
+          >
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="flex shrink-0 items-center gap-1 sm:gap-3 lg:gap-5">
+          <!-- Favorites -->
+          <button
+            id="fav-btn"
+            type="button"
+            aria-label="Favorites"
+            class="relative cursor-pointer border-0 bg-transparent p-1.5 transition-transform duration-300 hover:scale-110"
+          >
+            <img src="src/assets/icon/heart.svg" alt="" class="size-5" />
+
+            <span
+              id="fav-count"
+              class="absolute top-0 right-0 hidden size-4 items-center justify-center rounded-full bg-[#dbd06e] text-[10px] font-bold text-[#1c110d] transition-transform duration-300"
+            >
+              0
+            </span>
+          </button>
+
+          <!-- Shopping Cart -->
+          <button
+            id="cart-btn"
+            type="button"
+            aria-label="Shopping cart"
+            class="relative cursor-pointer border-0 bg-transparent p-1.5 transition-transform duration-300 hover:scale-110"
+          >
+            <img src="src/assets/icon/shopping-cart.svg" alt="" class="size-5" />
+
+            <span
+              id="cart-count"
+              class="absolute top-0 right-0 hidden size-4 items-center justify-center rounded-full bg-[#dbd06e] text-[10px] font-bold text-[#1c110d] transition-transform duration-300"
+            >
+              0
+            </span>
+          </button>
+
+          <!-- Login (desktop/tablet) -->
+          <a
+            href="#login"
+            class="hidden rounded-full bg-[#dbd06e] px-4 py-2 text-sm text-[#1c110d] no-underline transition-all duration-300 hover:bg-[#d81919] hover:text-white hover:shadow-lg sm:inline-block lg:px-6 lg:text-base"
+          >
+            Login
+          </a>
+
+          <!-- Mobile menu toggle -->
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="cursor-pointer rounded-md border-0 bg-transparent p-1.5 text-[#f5e6d3] lg:hidden"
+          >
+            <svg
+              class="size-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path id="icon-open" d="M4 6h16M4 12h16M4 18h16" />
+              <path id="icon-close" class="hidden" d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile navigation panel -->
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile"
+        class="hidden max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[#f5e6d3]/10 bg-[#1c110d] lg:hidden"
+      >
+        <ul class="m-0 flex list-none flex-col p-3 sm:px-6">
+          <li><a href="#home" class="mobile-link">Home</a></li>
+          <li><a href="#menu" class="mobile-link">Menu</a></li>
+          <li><a href="#about" class="mobile-link">About</a></li>
+          <li><a href="#contact" class="mobile-link">Contact</a></li>
+          <li class="mt-2 sm:hidden">
+            <a
+              href="#login"
+              class="block rounded-full bg-[#dbd06e] px-4 py-3 text-center text-[#1c110d] no-underline"
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pt-16 lg:pt-20">
+      <section
+        id="home"
+        class="relative isolate flex min-h-[calc(100svh-4rem)] lg:min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-[#1c110d] px-4 py-12 text-[#f5e6d3] sm:px-6 md:py-16 lg:px-8"
+      >
+        <img
+          src="src/assets/images/Good Coffee, Good Vibes.png"
+          alt=""
+          class="absolute inset-0 -z-10 size-full object-cover object-center"
+        />
+        <div
+          class="absolute inset-0 -z-10 bg-linear-to-r from-[#1c110d]/90 via-[#1c110d]/55 to-[#1c110d]/10"
+        ></div>
+
+        <div class="relative z-10 mx-auto w-full max-w-7xl">
+        <div
+          class="flex w-full max-w-sm flex-col gap-4 sm:max-w-md md:max-w-lg md:gap-5 lg:max-w-xl"
+        >
+          <!-- Badge -->
+          <span
+            class="w-fit rounded-full border-l-4 border-l-[#dbd06e] bg-[#1c110d]/75 px-3 py-1 text-xs text-[#f5e6d3] sm:px-4 sm:text-sm"
+          >
+            Premium Coffee &amp; Fresh Drinks
+          </span>
+
+          <!-- Heading -->
+          <h2
+            class="text-3xl leading-tight font-bold text-[#f5e6d3] sm:text-4xl md:text-5xl lg:text-6xl"
+          >
+            The Perfect Cup For Every Mood
+          </h2>
+
+          <p
+            class="max-w-md text-sm leading-relaxed text-[#f5e6d3]/90 sm:text-base"
+          >
+            From rich espresso to refreshing cold brews, we craft every drink
+            with passion and the finest ingredients.
+          </p>
+
+          <!-- Buttons -->
+          <div class="mt-2 flex flex-wrap items-center gap-3 sm:gap-5">
+            <a
+              href="#menu"
+              class="inline-flex items-center gap-3 rounded-full bg-[#dbd06e] px-5 py-3 text-sm font-semibold text-[#1c110d] no-underline transition-all duration-300 hover:-translate-y-1 hover:bg-[#f5e6d3] hover:shadow-lg sm:px-6 sm:text-base"
+            >
+              Explore Menu
+              <span>→</span>
+            </a>
+
+            <!-- Watch Our Story -->
+            <a
+              href="#story"
+              class="inline-flex items-center gap-2 rounded-full bg-[#372119] px-4 py-3 text-sm text-[#f5e6d3] no-underline transition-colors duration-300 hover:bg-[#4a2d22] sm:px-5 sm:text-base"
+            >
+              <img src="src/assets/icon/play.svg" alt="" class="size-5 shrink-0" />
+              Watch Our Story
+            </a>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section id="menu" class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <h2
+          class="mb-5 inline-block rounded-full border-l-4 border-[#dbd06e] bg-[#7f3a1f] px-5 py-3 text-xl font-bold text-amber-50 sm:px-8 sm:py-4 sm:text-2xl"
+        >
+          Our Menu
+        </h2>
+        <div
+          class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6"
+        >
+          <div
+            data-category="hot-coffee"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/hot-coffee.svg"
+              alt="Hot Coffee"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Hot Coffee</h3>
+          </div>
+
+          <div
+            data-category="iced-coffee"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/iced-coffee.svg"
+              alt="iced-coffee-icon"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Iced Coffee</h3>
+          </div>
+
+          <div
+            data-category="frappes"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/frappes.svg"
+              alt="frappe-icon"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Frappe</h3>
+          </div>
+
+          <div
+            data-category="tea"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/tea.svg"
+              alt="tea-icon"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Tea</h3>
+          </div>
+
+          <div
+            data-category="fresh-juice"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/fresh-juice.svg"
+              alt="juice-icon"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Juice</h3>
+          </div>
+
+          <div
+            data-category="smoothies"
+            class="liquid-card flex flex-col items-center justify-center gap-3 rounded-2xl p-3 text-center sm:gap-5 sm:p-4"
+          >
+            <img
+              src="src/assets/icon/smoothies.svg"
+              alt="smoothies-icon"
+              class="relative z-10 h-20 w-full object-contain sm:h-28 lg:h-32"
+            />
+            <h3 class="relative z-10 text-base font-bold sm:text-lg">Smoothie</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured-drinks" class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div
+          class="mb-6 flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between"
+        >
+          <h2 class="text-3xl font-bold text-[#1c110d] sm:text-4xl">
+            Featured Drinks
+          </h2>
+
+          <div
+            class="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-4 xl:flex xl:items-center"
+          >
+            <div
+              class="flex h-10 min-w-0 items-center gap-2 rounded-xl border border-[#dfcdbb] bg-[#fffaf4] px-3"
+            >
+              <img
+                src="src/assets/icon/search.svg"
+                alt=""
+                class="size-4 shrink-0"
+              />
+
+              <input
+                id="drink-search"
+                type="search"
+                placeholder="Search for a drink..."
+                class="w-full min-w-0 bg-transparent text-xs outline-none"
+              />
+            </div>
+
+            <select
+              id="category-filter"
+              class="h-10 min-w-0 rounded-xl border border-[#dfcdbb] bg-[#fffaf4] px-3 text-xs text-[#1c110d] outline-none"
+            >
+              <option value="all">All Categories</option>
+            </select>
+
+            <select
+              id="sort-filter"
+              class="h-10 min-w-0 rounded-xl border border-[#dfcdbb] bg-[#fffaf4] px-3 text-xs text-[#1c110d] outline-none"
+            >
+              <option value="popular">Sort by: Popularity</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+
+            <div
+              class="flex min-w-0 flex-col justify-center gap-2 rounded-xl border border-[#dfcdbb] bg-[#fffaf4] px-3 py-2 xl:w-32 xl:border-0 xl:bg-transparent xl:px-1"
+            >
+              <div
+                class="flex justify-between text-xs font-medium text-[#1c110d]"
+              >
+                <span>Max price</span>
+                <span id="price-value">125</span>
+              </div>
+              <input
+                id="price-filter"
+                type="range"
+                min="40"
+                max="125"
+                value="125"
+                class="w-full cursor-pointer accent-[#7f3a1f]"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          id="featured-products"
+          class="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        ></div>
+        <p id="empty-message" class="hidden py-10 text-center text-[#7f3a1f]">
+          No drinks found.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

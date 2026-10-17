@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer components {
+  .nav-link {
+    @apply whitespace-nowrap text-base text-inherit no-underline transition-colors duration-300 hover:text-[#dbd06e];
+  }
+
+  .mobile-link {
+    @apply block rounded-lg px-3 py-3 text-base text-inherit no-underline transition-colors duration-300 hover:bg-[#f5e6d3]/10 hover:text-[#dbd06e];
+  }
+}
+
+.liquid-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #c7bcbc;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+.liquid-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  left: -50%;
+  top: 75%;
+
+  width: 200%;
+  height: 200%;
+
+  border-radius: 40%;
+  background-color: #7f3a1f;
+
+  transition: top 1.2s ease-in-out;
+  animation: liquid-wave 4s linear infinite;
+}
+
+/* يرتفع السائل عند الوقوف بالماوس أو عند اختيار الكاتيجوري (active) */
+.liquid-card:hover::before,
+.liquid-card.active::before {
+  top: -10%;
+}
+
+.liquid-card:hover,
+.liquid-card.active {
+  color: white;
+}
+
+@keyframes liquid-wave {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-card::before {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
